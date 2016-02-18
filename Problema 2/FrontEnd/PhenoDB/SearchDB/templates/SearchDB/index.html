@@ -1,0 +1,17 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'searchdb/style.css' %}">
+	<img src="{% static 'searchdb/images/logo_m.png' %}" )>
+</head>
+<body>
+  <form method="post">
+  	{% csrf_token %}
+    <label for="illness">Informe a doença de interesse na caixa abaixo: </label><br>
+    <input id="search_pheno" type="text" name="search_pheno">
+    <input id="search_button" type="submit" value="Submit">
+	</form>
+</body>
+</html>

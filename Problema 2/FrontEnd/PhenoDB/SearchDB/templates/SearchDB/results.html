@@ -1,0 +1,22 @@
+	{% load staticfiles %}
+	<!DOCTYPE html>
+	<html>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<head>
+		<link rel="stylesheet" type="text/css" href="{% static 'searchdb/style.css' %}">
+		<img src="{% static 'searchdb/images/logo_m.png' %}" )>
+	</head>
+	<body>
+		<h1>Resultado:</h1>
+		<h2>{{ searched_illness }}</h2>
+		{% if searched_result %}
+		<ul>
+			{% for phenos in searched_result %}
+			<li>{{ phenos.phenogene }}</a></li>
+			{% endfor %}
+		</ul>
+		{% else %}
+		<p>Doença não encontrada. Tente outra vez.</p>
+		{% endif %}
+	</body>
+	</html>
